@@ -1,0 +1,121 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    padding-top: 60px; /* Space for the fixed navbar */
+    height: 300vh; /* Increased height to allow scrolling */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff; /* White navbar */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo img {
+    width: 30px !important;
+    height: auto !important;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: 2rem;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links li a {
+    color: #003087;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffb600;
+}
+
+/* Main Section */
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    padding-top: 160px; /* Space for the navbar */
+}
+
+/* Pay Text */
+.pay-text {
+    position: absolute;
+    top: 50%; /* Center vertically inside the image */
+    left: -100%; /* Initially off-screen to the left */
+    transform: translateY(-50%); /* Center vertically */
+    font-size: 4rem;
+    font-weight: bold;
+    color: #003087;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth movement and opacity */
+}
+
+/* Main Image */
+.main-image {
+    width: 100%;
+    height: auto;
+    transform: scale(0.3); /* Initially small */
+    transition: transform 0.5s ease-in-out; /* Smooth scaling transition */
+    z-index: 0;
+}
+
+/* Secondary Text (Under the Image) */
+.secondary-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003087;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+/* Second Image Section */
+.second-image-section {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.second-image {
+    width: 30%; /* Smaller size */
+    height: auto;
+    margin-left: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #003087;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
