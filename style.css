@@ -1,24 +1,22 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f5f5f5;
-    padding-top: 60px; /* Space for the fixed navbar */
-    height: 300vh; /* Increased height to allow scrolling */
+    padding-top: 60px;
+    height: 300vh;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #ffffff; /* White navbar */
+    background-color: #ffffff;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     position: fixed;
@@ -55,7 +53,39 @@ body {
     color: #ffb600;
 }
 
-/* Main Section */
+/* Auth links (Login & Sign Up) */
+.auth-links {
+    display: flex;
+    align-items: center;
+}
+
+.auth-links a {
+    text-decoration: none;
+    color: #003087;
+    font-weight: bold;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+}
+
+.auth-links a:hover {
+    color: #ffb600;
+}
+
+.auth-links .login-btn,
+.auth-links .signup-btn {
+    padding: 10px 20px;
+    border: 2px solid #003087;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-links .login-btn:hover,
+.auth-links .signup-btn:hover {
+    background-color: #003087;
+    color: white;
+}
+
+/* Main section */
 .home-section {
     display: flex;
     justify-content: center;
@@ -63,40 +93,41 @@ body {
     height: 100vh;
     position: relative;
     text-align: center;
-    padding-top: 160px; /* Space for the navbar */
+    padding-top: 120px;
 }
 
-/* Pay Text */
 .pay-text {
     position: absolute;
-    top: 50%; /* Center vertically inside the image */
-    left: -100%; /* Initially off-screen to the left */
-    transform: translateY(-50%); /* Center vertically */
+    top: 50%;
+    left: -100%;
     font-size: 4rem;
     font-weight: bold;
-    color: #003087;
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth movement and opacity */
+    color: white;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0;
+    z-index: 2;
 }
 
-/* Main Image */
-.main-image {
-    width: 100%;
-    height: auto;
-    transform: scale(0.3); /* Initially small */
-    transition: transform 0.5s ease-in-out; /* Smooth scaling transition */
-    z-index: 0;
-}
-
-/* Secondary Text (Under the Image) */
 .secondary-text {
     font-size: 2rem;
     font-weight: bold;
     color: #003087;
-    margin-top: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
 }
 
-/* Second Image Section */
+.main-image {
+    width: 100%;
+    height: auto;
+    transform: scale(0.3);
+    transition: transform 0.5s ease-in-out;
+    z-index: 0;
+    position: relative;
+}
+
 .second-image-section {
     display: flex;
     justify-content: flex-start;
@@ -104,12 +135,11 @@ body {
 }
 
 .second-image {
-    width: 30%; /* Smaller size */
+    width: 40%;
     height: auto;
-    margin-left: 20px;
+    margin-top: 20px;
 }
 
-/* Footer */
 footer {
     background-color: #003087;
     color: #fff;
