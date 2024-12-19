@@ -5,24 +5,21 @@ const imageHeight = window.innerHeight; // Initial image height is the viewport 
 
 // Listen for scroll events
 window.addEventListener('scroll', () => {
-    let scrollPosition = window.scrollY;
+    let scrollPosition = window.scrollY;  // How far you've scrolled
 
-    // Set a limit for the growth of the image (when it should stop growing)
-    let maxHeight = imageHeight; // Image can grow until it fills the screen height
+    // Calculate how much to scale the image based on how far you've scrolled
+    let scaleFactor = 1 + (scrollPosition / imageHeight); // Image grows as you scroll
 
-    // Calculate scale factor based on scroll position
-    let scaleFactor = 1 + (scrollPosition / (imageHeight * 2)); // Adjust for how fast the image grows
-    
-    // Apply the scale transformation
+    // Apply the scale transformation to the image
     mainImage.style.transform = `scale(${scaleFactor})`;
 
-    // Ensure the bottom of the image stays aligned with the bottom of the viewport
-    mainImage.style.bottom = `-${scrollPosition / 2}px`; // Keep the bottom aligned while growing
+    // Ensure the bottom of the image stays aligned with the bottom of the viewport as it grows
+    mainImage.style.bottom = `-${scrollPosition / 1.5}px`; // This ensures the bottom stays attached to the bottom of the viewport
 
-    // Once the image has taken up the whole screen, show the second image
-    if (scrollPosition >= maxHeight) {
-        secondImageContainer.style.display = 'flex';
+    // Show the second image once the main image fills the screen
+    if (scrollPosition >= imageHeight) {
+        secondImageContainer.style.display = 'flex';  // Show the second image when the scroll reaches the full screen
     } else {
-        secondImageContainer.style.display = 'none';
+        secondImageContainer.style.display = 'none';  // Hide the second image initially
     }
 });

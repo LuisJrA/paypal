@@ -35,7 +35,7 @@ html, body {
 
 /* Blue Area with Personal and Business tabs */
 .blue-area {
-    background-color: rgba(97, 205, 254, 255);
+    background-color: rgba(97, 205, 254, 255); /* PayPal Blue */
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -70,14 +70,15 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: flex-end; /* Start from the bottom */
+    background-color: rgba(97, 205, 254, 255); /* Blue background */
 }
 
 /* Main Image */
 .main-image {
     position: absolute;
-    width: 100%;
+    width: 60%; /* Start with smaller width */
     height: auto;
-    bottom: -10%; /* Initially slightly cut off at the bottom */
+    bottom: -20%; /* Initially slightly cut off at the bottom */
     object-fit: cover;
     transition: transform 0.2s ease-out;
 }
@@ -86,13 +87,14 @@ h2 {
 .second-image-container {
     display: none;
     width: 100%;
+    background-color: rgba(97, 205, 254, 255); /* Blue background */
     display: flex;
     justify-content: flex-end;
     padding: 20px;
 }
 
 .second-image {
-    width: 200px;
+    width: 300px; /* Slightly bigger second image */
     height: auto;
 }
 
