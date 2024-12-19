@@ -3,42 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay, Send and Save Money with PayPal | PayPal US</title>
+    <title>PayPal Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navbar">
             <div class="logo">
                 <img src="images/paypal_logo.png" alt="PayPal Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#Personal">Personal</a></li>
-                <li><a href="#Small Business">Small Business</a></li>
-                <li><a href="#Enterprise">Enterprise</a></li>
-                <li><a href="#Developer">Developer</a></li>
+                <li><a href="#">Personal</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Enterprise</a></li>
+                <li><a href="#">Developer</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Sign Up</a></li>
             </ul>
-            <div class="auth-links">
-                <a href="#login" class="login-btn">Login</a>
-                <a href="#signup" class="signup-btn">Sign Up</a>
-            </div>
-        </nav>
-    </header>
-
-    <section id="home" class="home-section">
-        <div class="content">
-            <h1 class="pay-text">Pay</h1>
-            <h2 class="secondary-text">Pay, send, and save smarter.</h2>
-            <img src="images/paypal_main.jpg" alt="PayPal Main Image" class="main-image">
         </div>
-    </section>
+    </nav>
 
-    <section id="second-image-section" class="second-image-section">
+    <!-- Blue Area with Tabs -->
+    <div class="blue-area">
+        <div class="tabs">
+            <a href="#" class="active">Personal</a>
+            <a href="#">Business</a>
+        </div>
+        <h2>Pay, send, and save smarter.</h2>
+    </div>
+
+    <!-- Main Image Section -->
+    <div class="main-image-container">
+        <img src="images/paypal_main.jpg" alt="Main Image" class="main-image">
+    </div>
+
+    <!-- Second Image Section (Initially Hidden) -->
+    <div class="second-image-container">
         <img src="images/image_2.jpg" alt="Second Image" class="second-image">
-    </section>
+    </div>
 
     <footer>
-        <p>&copy; 2024 PayPal Clone. All rights reserved.</p>
+        <p>&copy; 2024 PayPal</p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,31 +1,28 @@
-let lastScrollTop = 0;
-let image = document.querySelector('.main-image');
-let payText = document.querySelector('.pay-text');
+// Get references to the main image and second image container
+const mainImage = document.querySelector('.main-image');
+const secondImageContainer = document.querySelector('.second-image-container');
+const imageHeight = window.innerHeight; // Initial image height is the viewport height
 
-let totalScrollHeight = document.body.scrollHeight - window.innerHeight;
+// Listen for scroll events
+window.addEventListener('scroll', () => {
+    let scrollPosition = window.scrollY;
 
-window.addEventListener('scroll', function () {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
+    // Set a limit for the growth of the image (when it should stop growing)
+    let maxHeight = imageHeight; // Image can grow until it fills the screen height
 
-    let scrollPercentage = scrollY / totalScrollHeight;
-    scrollPercentage = Math.min(scrollPercentage, 1);
+    // Calculate scale factor based on scroll position
+    let scaleFactor = 1 + (scrollPosition / (imageHeight * 2)); // Adjust for how fast the image grows
+    
+    // Apply the scale transformation
+    mainImage.style.transform = `scale(${scaleFactor})`;
 
-    const scale = 0.3 + (scrollPercentage * 0.7);
-    const translateY = scrollPercentage * (windowHeight / 2);
-    const maxTranslateY = windowHeight / 2;
+    // Ensure the bottom of the image stays aligned with the bottom of the viewport
+    mainImage.style.bottom = `-${scrollPosition / 2}px`; // Keep the bottom aligned while growing
 
-    image.style.transform = `scale(${Math.min(scale, 1)}) translateY(${Math.min(translateY, maxTranslateY)}px)`;
-
-    const moveDistance = scrollPercentage * 100 - 100;
-    payText.style.transform = `translateX(${moveDistance}%)`;
-    payText.style.opacity = scrollPercentage > 0.05 ? 1 : 0;
-
-    if (scrollY > lastScrollTop) {
-        image.style.transform = `scale(${Math.min(scale, 1)}) translateY(${Math.min(translateY, maxTranslateY)}px)`;
+    // Once the image has taken up the whole screen, show the second image
+    if (scrollPosition >= maxHeight) {
+        secondImageContainer.style.display = 'flex';
     } else {
-        image.style.transform = `scale(${Math.max(0.3, scale)}) translateY(${Math.max(0, translateY)}px)`;
+        secondImageContainer.style.display = 'none';
     }
-
-    lastScrollTop = scrollY <= 0 ? 0 : scrollY;
 });
